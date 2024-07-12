@@ -11,7 +11,7 @@ namespace CNFairBanAlliance.API
     public static class MySQLAPI
     {
         public static string connectstring = "server=103.40.13.87;port=33066;user=Plugin;password=FairnessandJustice;database=playerlist";
-
+        //看到这并且兴奋的人，你好，我不会傻到那样，这个Plugin账户只有小范围读取权限和执行存储过程权限，什么也干不了，你一点数据都修改不了
         public static bool CheckPlayerUserID(this Player Player , out string Reason , out string BannedDate)
         {
             using (MySqlConnection connection = new MySqlConnection(connectstring))
