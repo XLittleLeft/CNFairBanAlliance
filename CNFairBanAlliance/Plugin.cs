@@ -38,14 +38,14 @@ namespace CNFairBanAlliance
                 switch (Config.CheckAction)
                 {
                     case CheckAction.Kick:
-                        Player.Kick($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被踢出由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主");
+                        Player.Kick($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被踢出由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net");
                         break;
                     case CheckAction.Ban:
-                        Player.Ban($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被封禁由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主" , Config.BanTime);
+                        Player.Ban($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被封禁由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net" , Config.BanTime);
                         break;
                 }
             }
-            if (Config.CheckPlayerIP)
+            else if (Config.CheckPlayerIP)
             {
                 if (Config.Log)
                 {
@@ -56,10 +56,10 @@ namespace CNFairBanAlliance
                     switch (Config.CheckAction)
                     {
                         case CheckAction.Kick:
-                            Player.Kick($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主");
+                            Player.Kick($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net");
                             break;
                         case CheckAction.Ban:
-                            Player.Ban($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主", Config.BanTime);
+                            Player.Ban($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net", Config.BanTime);
                             break;
                     }
                 }
