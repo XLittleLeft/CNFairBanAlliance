@@ -14,7 +14,7 @@ namespace CNFairBanAlliance
 {
     public class Plugin
     {
-        [PluginEntryPoint("中国公平封禁联盟系统","1.0.0", "中国公平封禁联盟系统(CFBA)","X小左")]
+        [PluginEntryPoint("中国公平封禁联盟系统","1.0.1", "中国公平封禁联盟系统(CFBA)","X小左")]
         void OnLoad()
         {
             EventManager.RegisterEvents(this);
