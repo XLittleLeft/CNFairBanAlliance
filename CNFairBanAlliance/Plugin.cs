@@ -10,17 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MEC;
-using CNFairBanAlliance.Helper;
 using LiteNetLib;
+using System.Timers;
 
 namespace CNFairBanAlliance
 {
     public class Plugin
     {
-        [PluginEntryPoint("中国公平封禁联盟系统","1.0.1", "中国公平封禁联盟系统(CFBA)","X小左")]
+        Timer timer = new Timer();
+
+        [PluginEntryPoint("中国公平封禁联盟系统","1.0.2", "中国公平封禁联盟系统(CFBA)","X小左")]
         void OnLoad()
         {
             EventManager.RegisterEvents(this);
+            MySQLAPI.SaveDataBaseToTxtFile();
+            timer.Interval = Config.CheckInterval * 1000;
+            timer.Elapsed += MySQLAPI.CheckDatabaseUpdates;
+            timer.Start();
         }
 
         [PluginConfig] public static Config Config;
@@ -53,18 +59,10 @@ namespace CNFairBanAlliance
             }
         }
 
-        [PluginEvent]
-        void OnRoundStart(RoundStartEvent ev)
+        [PluginUnload]
+        void OnUnload()
         {
-            UpdateHandle = Timing.RunCoroutine(UpdateHelper.UpdateDateBase());
+            timer.Close();
         }
-
-        [PluginEvent]
-        void OnRoundEnd(RoundEndEvent ev)
-        {
-            Timing.KillCoroutines(UpdateHandle);
-        }
-
-        private CoroutineHandle UpdateHandle;
     }
 }

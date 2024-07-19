@@ -368,7 +368,6 @@
   <ItemGroup>
     <Compile Include="API\MySQLAPI.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="Helper\UpdateHelper.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

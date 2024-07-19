@@ -82,7 +82,7 @@ namespace CNFairBanAlliance.API
             }
         }
 
-        public static void CheckDatabaseUpdates()
+        public static void CheckDatabaseUpdates(object sender, ElapsedEventArgs e)
         {
             using (MySqlConnection connection = new MySqlConnection(connectstring))
             {
