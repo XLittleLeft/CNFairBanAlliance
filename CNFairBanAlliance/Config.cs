@@ -12,11 +12,11 @@ namespace CNFairBanAlliance
     {
         [Description("联Ban玩家尝试加入Log输出")]
         public bool Log { get; set; } = true;
+        [Description("本地列表缓存路径")]
+        public string Path { get; set; } = "C:\\Users\\Administrator\\Desktop\\";
+        [Description("检查数据更新时间（分钟）")]
+        public float CheckInterval { get; set; } = 5;
         [Description("检查玩家IP")]
         public bool CheckPlayerIP { get; set; } = false;
-        [Description("对联Ban玩家进服的操作(Kick或Ban)")]
-        public CheckAction CheckAction { get; set; } = CheckAction.Kick;
-        [Description("如果选择了Ban，服内封禁时间")]
-        public long BanTime { get; set; } = 99999999;
     }
 }

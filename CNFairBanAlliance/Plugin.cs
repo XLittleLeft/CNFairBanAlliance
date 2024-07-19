@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MEC;
+using CNFairBanAlliance.Helper;
+using LiteNetLib;
 
 namespace CNFairBanAlliance
 {
@@ -20,50 +23,48 @@ namespace CNFairBanAlliance
             EventManager.RegisterEvents(this);
         }
 
-        [PluginConfig] public Config Config;
+        [PluginConfig] public static Config Config;
 
         [PluginEvent]
-        void OnPlayerJoined(PlayerJoinedEvent ev)
+        void OnPlayerPreauth(PlayerPreauthEvent ev)
         {
-            var Player = ev.Player;
+            var UserID = ev.UserId;
+            var IpAddress = ev.IpAddress;
+            var ConnectionRequest = ev.ConnectionRequest;
 
-            if (Player == null) return;
-
-            if (Player.CheckPlayerUserID(out var Reason, out var BannedDate))
+            if (MySQLAPI.CheckPlayerUserID(UserID, out var Reason, out var BannedDate))
             {
                 if (Config.Log)
                 {
-                    Log.Info($"封禁玩家{Player.Nickname}({Player.UserId})尝试加入服务器被处理");
+                    Log.Info($"封禁UserID :({UserID})尝试加入服务器被处理");
                 }
-                switch (Config.CheckAction)
-                {
-                    case CheckAction.Kick:
-                        Player.Kick($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被踢出由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net");
-                        break;
-                    case CheckAction.Ban:
-                        Player.Ban($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被封禁由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net" , Config.BanTime);
-                        break;
-                }
+                CustomLiteNetLib4MirrorTransport.ProcessCancellationData(ConnectionRequest, PreauthCancellationData.Reject($"\n[中国公平封禁联盟系统(CFBA)] 你的UserID在黑名单里\n你已被封禁由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net\n如果你并不存在于网站中说明此服主恶意篡改了本地储存的数据", true));
             }
             else if (Config.CheckPlayerIP)
             {
-                if (Config.Log)
+                if (MySQLAPI.CheckPlayerIP(IpAddress, out var _Reason, out var _BannedDate))
                 {
-                    Log.Info($"封禁玩家{Player.Nickname}({Player.IpAddress})尝试加入服务器被处理");
-                }
-                if (Player.CheckPlayerIP(out var _Reason, out var _BannedDate))
-                {
-                    switch (Config.CheckAction)
+                    if (Config.Log)
                     {
-                        case CheckAction.Kick:
-                            Player.Kick($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net");
-                            break;
-                        case CheckAction.Ban:
-                            Player.Ban($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net", Config.BanTime);
-                            break;
+                        Log.Info($"封禁IP :({IpAddress})尝试加入服务器被处理");
                     }
+                    CustomLiteNetLib4MirrorTransport.ProcessCancellationData(ConnectionRequest, PreauthCancellationData.Reject($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被封禁由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net\n如果你并不存在于网站中说明此服主恶意篡改了本地储存的数据", true));
                 }
             }
         }
+
+        [PluginEvent]
+        void OnRoundStart(RoundStartEvent ev)
+        {
+            UpdateHandle = Timing.RunCoroutine(UpdateHelper.UpdateDateBase());
+        }
+
+        [PluginEvent]
+        void OnRoundEnd(RoundEndEvent ev)
+        {
+            Timing.KillCoroutines(UpdateHandle);
+        }
+
+        private CoroutineHandle UpdateHandle;
     }
 }
