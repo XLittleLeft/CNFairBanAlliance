@@ -58,7 +58,7 @@ namespace CNFairBanAlliance.API
             BannedDate = string.Empty;
             return false;
         }
-        public static void SaveDataBaseToTxtFile()
+        public static void SaveDatabaseToTxtFile()
         {
             LastUpdateTime = DateTime.Now;
             HashSet<string> list = new HashSet<string>();
@@ -96,7 +96,7 @@ namespace CNFairBanAlliance.API
                         {
                             if (dr.GetDateTime(0) > LastUpdateTime)
                             {
-                                SaveDataBaseToTxtFile();
+                                SaveDatabaseToTxtFile();
                             }
                         }
                     }

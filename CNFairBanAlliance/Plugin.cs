@@ -23,7 +23,7 @@ namespace CNFairBanAlliance
         void OnLoad()
         {
             EventManager.RegisterEvents(this);
-            MySQLAPI.SaveDataBaseToTxtFile();
+            MySQLAPI.SaveDatabaseToTxtFile();
             timer.Interval = Config.CheckInterval * 60000;
             timer.Elapsed += MySQLAPI.CheckDatabaseUpdates;
             timer.Start();
@@ -62,6 +62,7 @@ namespace CNFairBanAlliance
         [PluginUnload]
         void OnUnload()
         {
+            timer.Stop();
             timer.Close();
         }
     }
