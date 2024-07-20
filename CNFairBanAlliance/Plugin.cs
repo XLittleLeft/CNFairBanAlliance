@@ -54,7 +54,7 @@ namespace CNFairBanAlliance
                     {
                         Log.Info($"封禁IP :({IpAddress})尝试加入服务器被处理");
                     }
-                    CustomLiteNetLib4MirrorTransport.ProcessCancellationData(ConnectionRequest, PreauthCancellationData.Reject($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被踢出由于:{Reason}\n封禁时间:{BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net\n如果你并不存在于网站中说明此服主恶意篡改了本地储存的数据", true));
+                    CustomLiteNetLib4MirrorTransport.ProcessCancellationData(ConnectionRequest, PreauthCancellationData.Reject($"\n[中国公平封禁联盟系统(CFBA)] 你的IP在黑名单里\n你已被踢出由于:{_Reason}\n封禁时间:{_BannedDate} 如有异议请联系服主或访问网站ban.jiubian.net\n如果你并不存在于网站中说明此服主恶意篡改了本地储存的数据", true));
                 }
             }
         }
