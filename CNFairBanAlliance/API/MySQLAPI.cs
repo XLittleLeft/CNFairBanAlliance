@@ -1,9 +1,12 @@
-﻿using MySql.Data.MySqlClient;
+﻿using LiteDB;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Tls;
 using PluginAPI.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -13,9 +16,9 @@ namespace CNFairBanAlliance.API
     public static class MySQLAPI
     {
         public static DateTime LastUpdateTime = DateTime.Now;
-        public static string FilePath = Plugin.Config.Path + "CFBA.txt";
-        public static string connectstring = "server=103.40.13.87;port=33066;user=Plugin;password=FairnessandJustice;database=playerlist";
-        //看到这并且兴奋的人，你好，我不会傻到那样，这个Plugin账户只有小范围读取权限和执行存储过程权限，什么也干不了，你一点数据都修改不了
+        public static string FilePath = Plugin.Config.Path;
+        public static string connectionString = "server=sql.cnfba.top;port=33066;user=Plugin;password=FairnessandJustice;database=playerlist";
+
         public static bool CheckPlayerUserID(string UserID , out string Reason , out string BannedDate)
         {
             using (StreamReader sr = new StreamReader(FilePath))
@@ -61,8 +64,8 @@ namespace CNFairBanAlliance.API
         public static void SaveDatabaseToTxtFile()
         {
             LastUpdateTime = DateTime.Now;
-            HashSet<string> list = new HashSet<string>();
-            using (MySqlConnection connection = new MySqlConnection(connectstring))
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
                 string commandstring = "CALL GetDataBase()";
@@ -84,7 +87,7 @@ namespace CNFairBanAlliance.API
 
         public static void CheckDatabaseUpdates(object sender, ElapsedEventArgs e)
         {
-            using (MySqlConnection connection = new MySqlConnection(connectstring))
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
                 string commandstring = "CALL GetLastUpdateTime()";
