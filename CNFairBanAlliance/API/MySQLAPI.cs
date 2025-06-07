@@ -61,7 +61,7 @@ namespace CNFairBanAlliance.API
             LastUpdateTime = DateTime.Now;
 
             using MySqlConnection connection = new(connectionString);
-            connection.OpenAsync();
+            connection.Open();
             string commandstring = "CALL GetDataBase()";
             using MySqlCommand command = new(commandstring, connection);
             using MySqlDataReader dr = command.ExecuteReader();
