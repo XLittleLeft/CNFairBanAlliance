@@ -12,7 +12,7 @@ namespace CNFairBanAlliance.API
     {
         public static DateTime LastUpdateTime = DateTime.Now;
         public static string FilePath = CustomEventHandler.Config.Path;
-        public static string connectionString = "server=sql.cnfba.top;port=33066;user=Plugin;password=FairnessandJustice;database=playerlist;SslMode=None";
+        public static string connectionString = "server=sql.cnfba.top;port=33066;user=Plugin;password=FairnessandJustice;database=playerlist";
 
         public static bool CheckPlayerUserID(string UserID, out string Reason, out string BannedDate)
         {

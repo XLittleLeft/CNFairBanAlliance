@@ -33,119 +33,94 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony">
+      <HintPath>E:\LabAPI\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\必要依赖 - LabAPI\Assembly-CSharp.dll</HintPath>
+      <HintPath>E:\LabAPI\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Assembly-CSharp-firstpass.dll</HintPath>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>E:\LabAPI\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-Publicized, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Assembly-CSharp-Publicized.dll</HintPath>
+    <Reference Include="Assembly-CSharp-Publicized">
+      <HintPath>E:\LabAPI\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
-    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    <Reference Include="AudioPlayerApi">
+      <HintPath>E:\LabAPI\AudioPlayerApi.dll</HintPath>
     </Reference>
     <Reference Include="Caress">
-      <HintPath>..\..\..\必要依赖 - LabAPI\Caress.dll</HintPath>
+      <HintPath>E:\LabAPI\Caress.dll</HintPath>
     </Reference>
-    <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\CommandSystem.Core.dll</HintPath>
+    <Reference Include="CommandSystem.Core">
+      <HintPath>E:\LabAPI\CommandSystem.Core.dll</HintPath>
     </Reference>
     <Reference Include="HintServiceMeow-LabAPI">
-      <HintPath>..\..\..\必要依赖 - LabAPI\HintServiceMeow-LabAPI.dll</HintPath>
+      <HintPath>E:\LabAPI\HintServiceMeow-LabAPI.dll</HintPath>
     </Reference>
     <Reference Include="LabApi">
-      <HintPath>..\..\..\必要依赖 - LabAPI\LabApi.dll</HintPath>
+      <HintPath>E:\LabAPI\LabApi.dll</HintPath>
     </Reference>
-    <Reference Include="LiteDB, Version=5.0.16.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\LiteDB.dll</HintPath>
+    <Reference Include="LiteDB">
+      <HintPath>E:\LabAPI\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
-      <HintPath>..\..\..\必要依赖 - LabAPI\Mirror.dll</HintPath>
+      <HintPath>E:\LabAPI\Mirror.dll</HintPath>
     </Reference>
-    <Reference Include="Mirror-Publicized, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Mirror-Publicized.dll</HintPath>
+    <Reference Include="Mirror-Publicized">
+      <HintPath>E:\LabAPI\Mirror-Publicized.dll</HintPath>
     </Reference>
-    <Reference Include="Mirror.Components, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Mirror.Components.dll</HintPath>
+    <Reference Include="Mirror.Components">
+      <HintPath>E:\LabAPI\Mirror.Components.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
-      <HintPath>..\..\..\必要依赖 - LabAPI\Mono.Security.dll</HintPath>
+      <HintPath>E:\LabAPI\Mono.Security.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data">
+      <HintPath>E:\LabAPI\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
-      <HintPath>..\..\..\必要依赖 - LabAPI\netstandard.dll</HintPath>
+      <HintPath>E:\LabAPI\netstandard.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>E:\LabAPI\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NorthwoodLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\NorthwoodLib.dll</HintPath>
+    <Reference Include="NorthwoodLib">
+      <HintPath>E:\LabAPI\NorthwoodLib.dll</HintPath>
     </Reference>
-    <Reference Include="NWAPIPermissionSystem, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\NWAPIPermissionSystem.dll</HintPath>
+    <Reference Include="NWAPIPermissionSystem">
+      <HintPath>E:\LabAPI\NWAPIPermissionSystem.dll</HintPath>
     </Reference>
-    <Reference Include="Pooling, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Pooling.dll</HintPath>
-    </Reference>
-    <Reference Include="SCPSLAudioApi, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\SCPSLAudioApi.dll</HintPath>
+    <Reference Include="Pooling">
+      <HintPath>E:\LabAPI\Pooling.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Unity.TextMeshPro.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:\LabAPI\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\Unity.Timeline.dll</HintPath>
+    <Reference Include="Unity.Timeline">
+      <HintPath>E:\LabAPI\Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine">
+      <HintPath>E:\LabAPI\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\UnityEngine.AudioModule.dll</HintPath>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>E:\LabAPI\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\LabAPI\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\UnityEngine.PhysicsModule.dll</HintPath>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>E:\LabAPI\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\UnityEngine.TextRenderingModule.dll</HintPath>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>E:\LabAPI\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\UnityEngine.UI.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:\LabAPI\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\必要依赖 - LabAPI\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet">
+      <HintPath>E:\LabAPI\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -26,7 +26,7 @@ namespace CNFairBanAlliance
 
         public override string Author => "X小左";
 
-        public override System.Version Version => new(1, 0, 4);
+        public override System.Version Version => new(1, 0, 5);
 
         public override System.Version RequiredApiVersion => new(LabApiProperties.CompiledVersion);
 
