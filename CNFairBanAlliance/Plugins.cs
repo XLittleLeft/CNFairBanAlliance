@@ -31,6 +31,7 @@ namespace CNFairBanAlliance
 
         public override System.Version Version => new(2, 0, 0);
 
+
         public override System.Version RequiredApiVersion => new(LabApiProperties.CompiledVersion);
 
         public override void Enable()
