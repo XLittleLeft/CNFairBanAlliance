@@ -31,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -149,8 +150,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\CustomEventHandler.cs" />
-    <Compile Include="API\MySQLAPI.cs" />
+    <Compile Include="API\CustomEvents.cs" />
+    <Compile Include="API\DataAPI.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Plugins.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
