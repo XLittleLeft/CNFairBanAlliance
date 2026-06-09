@@ -1,7 +1,5 @@
-﻿using GameCore;
-using LabApi.Events.Arguments.PlayerEvents;
+﻿using LabApi.Events.Arguments.PlayerEvents;
 using LabApi.Events.CustomHandlers;
-using LabApi.Features.Wrappers;
 using System;
 
 using Log = LabApi.Features.Console.Logger;
@@ -19,7 +17,7 @@ namespace CNFairBanAlliance.API
 
             try
             {
-                if (DataAPI.IsBanned(UserID, IpAddress , out BanType banType))
+                if (DataAPI.IsBanned(UserID, IpAddress, out BanType banType))
                 {
                     string reason = DataAPI.GetBannedReason(UserID);
                     string date = DataAPI.GetBannedTime(UserID);

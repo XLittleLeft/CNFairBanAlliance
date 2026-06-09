@@ -1,13 +1,13 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
+﻿using LabApi.Features.Console;
 using Newtonsoft.Json;
-using LabApi.Features.Console;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CNFairBanAlliance.API
 {
@@ -163,7 +163,7 @@ namespace CNFairBanAlliance.API
         /// <summary>
         /// 扩展方法：直接检查某个 User_ID 字符串是否处于联Ban中
         /// </summary>
-        public static bool IsBanned(string userId , string IP , out BanType banType)
+        public static bool IsBanned(string userId, string IP, out BanType banType)
         {
             if (string.IsNullOrEmpty(userId))
             {
